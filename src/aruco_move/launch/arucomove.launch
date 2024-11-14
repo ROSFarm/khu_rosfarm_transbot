@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="aruco_move" name="picamera" type="picamera.py" output="screen"/>
+    <node pkg="aruco_move" name="arsudong" type="arsudong.py" output="screen"/>
+</launch>

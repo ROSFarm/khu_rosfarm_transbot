@@ -1,0 +1,22 @@
+# Ignore build and devel
+build/
+devel/
+
+# Ignore logs and temp files
+logs/
+*.log
+
+# Ignore unused folders in src
+src/transbot_ctrl/
+src/transbot_mulity/
+src/transbot_program/
+src/gscam
+src/jetson_csi_cam
+src/roboflask
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+.catkin_workspace

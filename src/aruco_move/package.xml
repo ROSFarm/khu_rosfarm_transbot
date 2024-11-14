@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>aruco_move</name>
+  <version>0.0.0</version>
+  <description>The aruco_move package for ROS</description>
+  <maintainer email="your_email@example.com">Your Name</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+  <export>
+  </export>
+</package>
+
