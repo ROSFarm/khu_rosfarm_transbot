@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROSFarm - Agricultural Robotics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .logo {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .team-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .area {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            background-color: #ffffff;
+        }
+
+        .apple-images img {
+            width: 50px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header>
+        <img src="{{ url_for('static', filename='kh.png') }}" alt="Logo" class="logo">
+        <div class="team-name">ROSFarm - Agricultural Robotics</div>
+    </header>
+
+    <!-- 본문 콘텐츠 -->
+    <main>
+        <!-- 영역 1 -->
+        <div class="area" id="area1">
+            <h2>Area 1</h2>
+            <div class="apple-count">
+                {{ area1_count }} apples  
+            </div>
+        </div>
+
+        <!-- 영역 2 -->
+        <div class="area" id="area2">
+            <h2>Area 2</h2>
+            <div class="apple-count">
+                {{ area2_count }} apples  
+            </div>
+        </div>
+
+        <!-- 영역 3 -->
+        <div class="area" id="area3">
+            <h2>Area 3</h2>
+            <div class="apple-count">
+                {{ area3_count }} apples  
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

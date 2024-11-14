@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROSFarm - Agricultural Robotics</title>
+    <style>
+        /* 전체 페이지 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 헤더 스타일 */
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #aad8a6;
+            color: white;
+        }
+        
+        /* 로고 스타일 */
+        .logo {
+            height: 100px;
+            margin-right: 30px;
+        }
+        
+        /* 팀명 스타일 */
+        .team-name {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        /* 콘텐츠 스타일 */
+        h1 {
+            color: #333;
+        }
+        
+        .apple-images img {
+            width: 150px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header>
+        <img src="{{ url_for('static', filename='kh.png') }}" alt="Logo" class="logo">
+        <div class="team-name">ROSFarm - Agricultural Robotics</div>
+    </header>
+
+    <!-- 본문 콘텐츠 -->
+    <main>
+        <h1>Number of Apples: {{ apple_count }}</h1>
+        
+        <div class="apple-images">
+            {% for i in range(apple_count) %}
+                <img src="{{ url_for('static', filename='apple.png') }}" alt="Apple">
+            {% endfor %}
+        </div>
+    </main>
+
+</body>
+</html>
+
