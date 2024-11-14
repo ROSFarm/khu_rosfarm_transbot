@@ -1,2 +1,62 @@
-# khu_rosfarm_transbot
-Code repository for ROSFarm's Transbot project developed for the Agricultural Robotics Competition.
+# 🤖 khu_rosfarm_transbot
+
+이 레포지토리는 **제5회 농업용 로봇 경진대회**를 위해 **경희대학교 ROSFarm** 팀이 개발한 자율 주행, 과일 분류 및 장애물 인식 관련 코드를 담고 있습니다.
+
+<img src="https://github.com/user-attachments/assets/0b84705d-f0e7-40db-b174-a9e92c846176" alt="Image description" width="500"/>
+
+## 🚜 대회 임무 개요
+
+1. **라인 트래킹**
+    - 검은 선을 따라 주행하며, 임의의 분기 경로를 처리.
+    - 라인 종료 지점에서 정지.
+2. **과수 사이 주행, 장애물 검출 및 완숙과 검출** 
+    - 3개의 구역(Area 1, Area 2, Area 3)을 주행.
+    - 과수 검출 Area에서는 과수를 검출 및 카운팅하고 완숙과(적색)를 검출하여 표시
+    - 성숙한 과일(적색)과 미성숙 과일(녹색)을 탐지 및 계수.
+    - 장애물 Area에서는 경로 중간에 위치한 장애물을 인식하여 장애물 앞에서
+    정지하고, 불빛, 소리 등을 이용하여 위험상황에 대해 표현
+    - 과수 주행 단계 종료지점 식별을 위한 구간 변경선(검은색 계열 정지선) 설정
+3. **목표 지점 도착**
+    - ArUco 마커를 활용하여 지정된 위치에 정확히 주차.
+
+## 🔍 ROSFarm 전략
+
+### 하드웨어 구성
+
+- **플랫폼**: Transbot
+- Jetson Nano, Raspberry Pi
+- LiDAR, IR 센서, Astra 카메라, 초음파 센서
+
+### 소프트웨어 구현
+
+1. **라인 트래킹**
+    - RealSense 카메라를 사용하여 검은색 선 인식
+    - 동적 파라미터 조정을 통한 정확도 향상.
+2. **과수 사이 주행**
+    - LiDAR 회피를 이용한 주행
+    - IR 센서를 이용한 정지선 감지.
+3. **장애물 인식**
+    - 라즈베리파이와 연결된 초음파 센서로 장애물 감지.
+    - 장애물 감지 시 정지 및 시각 신호 출력.
+4. **과일 분류**
+    - YOLOv5로 과일 탐지 및 성숙/미성숙 분류.
+    - Astra 카메라 2대를 통해 빠르고 정확한 탐지 구현.
+    - 각 구역별 탐지 결과 실시간 웹페이지를 통한 출력.
+5. **주차**
+    - Pi 카메라로 ArUco 마커를 인식하여 정밀 주차 수행.
+
+## 📂 문서 구조
+
+- `README.md`: 프로젝트 소개, 대회 개요, 전략
+- `transbot_ws/src`:  코드 파일
+- `docs/usage.md`: 실행 및 설정 가이드
+
+## 🛠 실행 환경
+
+- ROS
+- Jetson Nano 및 Raspberry Pi
+- Python 3.8+
+
+## 📌 참고 자료
+
+- http://www.yahboom.net/study/Transbot-jetson_nano
