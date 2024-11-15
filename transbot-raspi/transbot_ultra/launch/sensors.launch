@@ -1,0 +1,8 @@
+<!-- sensors.launch -->
+<launch>
+    <!-- ROS_infrared_sensor 노드 실행 -->
+    <node name="infrared_sensor_node" pkg="transbot_ultra" type="ROS_ir_sensor.py" output="screen" />
+
+    <!-- ROS_sonar_sensor 노드 실행 -->
+    <node name="sonar_sensor_node" pkg="transbot_ultra" type="ROS_sonar_sensor.py" output="screen" />
+</launch>
